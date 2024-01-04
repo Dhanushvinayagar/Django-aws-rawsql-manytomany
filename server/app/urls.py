@@ -15,5 +15,8 @@ urlpatterns = [
     path('role/<int:pk>',views.RoleApi.as_view()),
 
     # Big U 
-    path('persona',views.PersonaApi.as_view())
+    path('persona',views.PersonaApi.as_view()),
+
+    # rawsql
+    path('employee-details',views.employeedetails , name = "employee-details")
 ]

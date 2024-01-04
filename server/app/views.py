@@ -256,3 +256,11 @@ class PersonaApi(APIView):
 
 
 
+@api_view (['GET'])
+def employeedetails(request):
+    if request.method == 'GET':
+        raw_data = PersonaDb.objects.raw('SELECT id, persona_name , persona_code,persona_description from app_PersonaDb')
+        print(raw_data)
+        for i in raw_data:
+            print(i)
+        return Response({"res":"Success"})
